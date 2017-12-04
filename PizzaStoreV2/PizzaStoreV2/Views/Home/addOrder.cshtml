@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "addOrder";
+}
+
+<h2>This is your Order</h2>
+<h3>Please Print/Save this Page</h3>
+
+
+
+<h4>   
+  @foreach (var orderedPizza in ViewBag.Pizzas)
+  {
+      @Html.Raw(orderedPizza.ToString())
+  }
+  Total Order: @ViewBag.TheOrderPrice
+</h4>
+
+<h3>Your order will be ready in 30 minutes, please order again anytime!</h3>
+

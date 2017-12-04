@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title - Alfred Pizza Stop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/materialize.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+   
+
+</head>
+<body>                 
+        <!-- Collapsible content -->
+        <nav>
+            <div class="nav-wrapper amber darken-3">
+                <a href="#" class="brand-logo">Alfred Pizza Stop</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li><a href="~/Home/Menu">Menu</a></li>
+                    <li><a href="~/Home/OrderForm">Order</a></li>
+                    <li><a href="~/Account/Login">Login</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li><a href="~/Home/Menu">Menu</a></li>
+                    <li><a href="~/Home/OrderForm">Order</a></li>
+                    <li>@Html.Partial("_LoginPartial")</li>
+                </ul>
+            </div>
+        </nav>
+
+    <!--/.Navbar-->
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Webb D. Kendell </p>
+            </footer>
+        </div>
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/materialize.min.js"></script>
+        @Scripts.Render("~/Scripts/init.js")
+        @RenderSection("scripts", required: false)
+</body>
+</html>
